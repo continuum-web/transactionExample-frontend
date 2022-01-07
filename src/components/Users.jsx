@@ -2,6 +2,7 @@ import React from 'react';
 import { getUsers } from '../utils/apicalls'
 import { useState, useEffect } from 'react';
 import UserCard from './UserCard'
+import '../styles/UserPageStyle.css'
 
 export default function Users() {
 	const [ users, setUsers ] = useState([]);
@@ -14,7 +15,7 @@ export default function Users() {
     }, [])
   
 	return (
-        <div className="users Container">
+        <div className="usersContainer">
             {users.map(({doc}) => {
                return <UserCard key={ doc._id} user={doc} setUsers={setUsers}/>
             })}

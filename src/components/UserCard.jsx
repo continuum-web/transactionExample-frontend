@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react';
-
-
+import { Link } from 'react-router-dom';
+import '../styles/UserCardStyle.css';
 
 export default function UserCard({ user }) {
-	const { name, email, balance, transactions } = user;
-	const [transactionsList, setTransactionsList] = useState([]);
-
-	useEffect(() => {
-		
-		// setTransactionsList(user.transactions);
-		return;
-	}, []);
-
-	// console.log(transactionsList)
+	const { name, email, balance, _id } = user;
 
 	return (
-		<div>
-			<p>{name}</p>
-			<p>{email}</p>
-			<p>{balance}</p>
-			
+		<div className="UserCard">
+			<img src={`https://api.multiavatar.com/${user.name}.png`} alt={ `of ${name}`} className="ProfileImg"/>
+			<p className="UserName">Name: {name}</p>
+			<p>Email: {email}</p>
+			<p>Balance: £{balance}</p>
+
+			<Link className="UserLink" to={`/users/${_id}`}>Select User</Link>
 		</div>
 	);
 }
