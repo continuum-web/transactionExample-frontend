@@ -18,3 +18,4 @@ export const getSingleUser = (id) => {
 		return user
 	});
 };
+

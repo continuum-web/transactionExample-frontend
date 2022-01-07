@@ -1,0 +1,51 @@
+.UserContainer {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-columns: 0.2fr 0.5fr 1fr;
+	grid-template-rows: 0.5fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		'. ProfileImg Details'
+		'Table Table Table';
+	justify-content: center;
+	align-content: space-between;
+	/* justify-items: center; */
+	align-items: center;
+}
+
+.UserPageProfileImg {
+	height: 300px;
+	grid-area: ProfileImg;
+}
+.Details {
+    margin-left: 1rem;
+	grid-area: Details;
+    text-align: left;
+}
+.Table {
+	grid-area: Table;
+}
+
+.UserPageName{
+     font-weight: bold;
+    font-size: 2rem;
+
+}
+
+.UserPageBalance{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.UserPageTableTitle{
+     font-weight: bold;
+    font-size: 1.25rem;
+}
+.btn{
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: blueviolet;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
