@@ -12,7 +12,6 @@ export default function SingleUser() {
 		let isMounted = true; // note mutable flag
 
 		getSingleUser(id).then(data => {
-			console.log(data);
 			setUser(data);
 			setTransactionsList(data.transactions);
 		});
@@ -20,14 +19,17 @@ export default function SingleUser() {
 		return () => {
 			isMounted = false;
 		};
-	}, []);
+	}, [id]);
 	//amount: 50
 	// balance: 1272;
 	// id: 'f7439e50-fb2e-4810-91d2-9846d78e302a';
 	// type: 'credit';
-	console.log(transactionsList);
+	
+	
+	
 	return (
 		<div>
+			<img src={`https://api.multiavatar.com/${user.name}.png`} alt='' />
 			<p>Name: {user.name}</p>
 			<p>Email: {user.email}</p>
 			<p>balance: {user.balance}</p>
@@ -43,7 +45,6 @@ export default function SingleUser() {
 				</thead>
 				<tbody>
 					{transactionsList.map(transaction => {
-						console.log(transaction.id);
 						return (
 							<tr key={transaction.id}>
 								<td>{transaction.id}</td>
