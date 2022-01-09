@@ -3,7 +3,7 @@
 This is my tech test submition for the LeoVegas TechTest,
 A frontend implementation to the backend API
 The back end api can be found hosted on [Heroku](https://transactionsexample.herokuapp.com/) and the Github repo can be found [here](https://github.com/continuum-web/transactionExample-backend) 
-and is to be used with the [frontend](here).
+and is to be used with the [frontend](https://github.com/continuum-web/transactionExample-frontend).
 
 The Frontend uses the following technologies
 + reactJS
@@ -22,10 +22,12 @@ to render the contents.
 ## Showcase
 
 User List
-    <img width="500" alt="portfolio_view" src="./Screenshot1.png">
+
+ <img width="500" alt="screenshot 1" src="./Screenshot1.png">
 
 Single user with transaction history
-<img width="500" alt="portfolio_view" src="./Screenshot2.png">  
+
+<img width="500" alt="screenshot 2" src="./Screenshot2.png">  
 
 
 ## Thoughts
@@ -33,5 +35,9 @@ Overall the project is designed to be scalable with the persistent data, using p
 
 I chose to use React because I wanted the front end to be able to rerender information without having to rerender the full page, For example after crediting and debiting an account.
 
-## testing
+## Testing
 In the future and given more time I would implement testing on the front and back end of the project using jest for the backend and cypress for the front end.
+
+
+## Final Thoughts
+I really enjoyed the challenge presented by this tech test, the main challenge I had was adapting the project from the java based brief and finding an in memory database.
