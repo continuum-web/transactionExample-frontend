@@ -32,7 +32,7 @@ export default function SingleUser() {
 		}
 	};
 	useEffect(() => {
-		let isMounted = true; // note mutable flag
+		// let isMounted = true; // note mutable flag
 
 		getSingleUser(id).then(data => {
 			setUser(data);
@@ -40,7 +40,7 @@ export default function SingleUser() {
 		});
 
 		return () => {
-			isMounted = false;
+			// isMounted = false;
 		};
 	}, [id]);
 	if (error) {
