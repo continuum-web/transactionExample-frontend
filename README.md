@@ -3,7 +3,7 @@
 This is my tech test submition for the LeoVegas TechTest,
 A frontend implementation to the backend API
 The back end api can be found hosted on [Heroku](https://transactionsexample.herokuapp.com/) and the Github repo can be found [here](https://github.com/continuum-web/transactionExample-backend) 
-and is to be used with the [frontend](https://github.com/continuum-web/transactionExample-frontend).
+and is to be used with the [frontend](https://keen-volhard-b5c272.netlify.app/).
 
 The Frontend uses the following technologies
 + reactJS
