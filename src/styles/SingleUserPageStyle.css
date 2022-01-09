@@ -31,7 +31,10 @@
     font-size: 2rem;
 
 }
-
+.error{
+	color: red;
+	font-weight: bold;
+}
 .UserPageBalance{
     font-weight: bold;
     font-size: 1.25rem;

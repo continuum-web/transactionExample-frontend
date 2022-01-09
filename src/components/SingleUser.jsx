@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getSingleUser } from '../utils/apicalls';
+import { getSingleUser, creditUser, debitUser } from '../utils/apicalls';
 import '../styles/TableStyle.css';
 import '../styles/SingleUserPageStyle.css';
 
@@ -9,15 +9,28 @@ export default function SingleUser() {
 	const [user, setUser] = useState({});
 	const [transactionsList, setTransactionsList] = useState([]);
 	const [amount, setAmount] = useState(0);
+	const [error, setError] = useState(false);
 
 	const handleSubmitCredit = event => {
 		event.preventDefault();
-		console.log('CREDIT')
+		creditUser(id, amount).then(user => {
+			setUser(user);
+			setTransactionsList(user.transactions);
+			setAmount(0);
+		});
 	};
 	const handleSubmitDebit = event => {
 		event.preventDefault();
-		console.log("DEBIT")
-	 }
+		if (user.balance >= amount) {
+			debitUser(id, amount).then(user => {
+				setUser(user);
+				setTransactionsList(user.transactions);
+				setAmount(0);
+			});
+		} else {
+			setError(true);
+		}
+	};
 	useEffect(() => {
 		let isMounted = true; // note mutable flag
 
@@ -29,8 +42,12 @@ export default function SingleUser() {
 		return () => {
 			isMounted = false;
 		};
-	}, []);
-
+	}, [id]);
+	if (error) {
+		setTimeout(() => {
+			setError(false);
+		}, 3000);
+	}
 	return (
 		<div className='UserContainer'>
 			<img
@@ -46,6 +63,7 @@ export default function SingleUser() {
 				</p>
 				<div className='buttons'>
 					<form>
+						{error ? <div className='error'>Insufficient funds</div> : null}
 						<input
 							type='number'
 							min='1'
